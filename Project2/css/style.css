@@ -4,14 +4,14 @@ html, body {
     padding: 0;
     margin: 0;
     background-color: #f7f8fc;
+    background: url('../images/brick.jpg') repeat;
 }
 
-nav.navbar.navbar-expand {
+/** Header **/
+nav.navbar.navbar-expand-md {
     background-color: #688ab0;
 }
 
-
-/** Header **/
 div a.nav-link {
     text-transform:uppercase;
     font-weight:bold;
@@ -28,7 +28,7 @@ a.nav-link {
 
 li.nav-item {
     width: 200px;
-    padding: 0 auto;
+    margin: 0 auto;
     text-align: center;
     font-size: 18px;
 }
@@ -38,6 +38,10 @@ li.nav-item img.d-block {
 }
 
 /** Slider **/
+section.bg-slider {
+    background-color: #000;
+}
+
 div.carousel-inner {
     max-height: 500px;
     width: 100%;
@@ -51,10 +55,10 @@ div.message {
     text-align: center;
     background-color: #ffffff;
     padding: 50px 50px;
-    width: 500px;
-    height: 300px;
+    max-width: 50%;
+    max-height: 100%;
     position:relative;
-    margin: auto;
+    margin: 0 auto;
     margin-top: -50px;
     border-top: 10px solid #688ab0;
     z-index: 1;
@@ -65,15 +69,17 @@ div.message h3 {
 }
 
 /** Lights **/
-div.col {
-    float:inherit;
-    margin-top: -250px;
-    padding: auto;
+section.container.lights {
+    margin-top: -213px;
 }
 
 div.col img {
     margin: 0 auto;
-    width: 100px;
+    height: 100%;
+}
+
+span.fa.fa-bars {
+    color: #fff;
 }
 
 .no-gutters {
@@ -81,61 +87,18 @@ div.col img {
   margin-left: 0;
 }
 
-/** Frames **/
-
-div.col.frames {
-    margin: 10px 0;
-}
-div.frameItem {
-    background-color: #FFFFFF;
-    border: 5px #2c405b solid;
-    box-shadow: 0px 10px 5px grey;
-}
-
-    div.frameItem.frameItemOne {
-        padding: 20px 0;
-        margin-top: 35%;
-    }
-
-    div.frameItem.frameItemOne img {
-        width: 130px;
-    }
-    div.frameItem.frameItemTwo {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding: 10px 0;
-    }
-    div.frameItem.frameItemTwo img {
-        width: 140px;
-    }
-
-    div.frameItem.frameItemThree {
-        width: 200px;
-        height: 270px;
-        margin: 0px 23px;
-        margin-bottom: 20px;
-        padding: 28px 20px;
-    }
-    div.frameItem.frameItemThree img {
-        width: 145px;
-        height: 200px;
-        object-fit: cover;
-    }
-
 /** Brand **/
 div.brand {
     margin-top: 50px;
     text-align: center;
     text-transform:uppercase;
     line-height: 30px;
-    position:relative;
+    display:block;
     clear: both;
-
 }
     div.brand h3 {
         font-family: 'Saira', helvetica, sans-serif;
         font-size: 36px;
-        margin: 0;
     }
     div.brand p {
         font-family: 'Saira', helvetica, sans-serif;
@@ -144,11 +107,59 @@ div.brand {
         word-spacing: 5px;
         letter-spacing: 10px;
         margin: 0;
+        clear: both;
     }
+
+/** Frames **/
+div.col.frames {
+    padding: auto;
+    margin: auto;
+}
+
+div.frameItem.frameItemOne {
+    border: #688ab0 solid 5px;
+    width: 160px;
+}
+
+div.frameItem.frameItemOne img.d-block {
+    width: 150px;
+    height: 180px;
+    border: 20px #fff solid;
+    margin: 0 auto;
+}
+
+div.frameItem.frameItemTwo {
+    border: #688ab0 solid 5px;
+    width: 190px;
+    margin: 20px auto;
+}
+
+div.frameItem.frameItemTwo img.d-block {
+    width: 180px;
+    height: 130px;
+    border: 20px #fff solid;
+    margin: 0 auto;
+}
+
+div.frameItem.frameItemThree {
+    border: #688ab0 solid 5px;
+    width: 230px;
+    height: 280px;
+}
+
+div.frameItem.frameItemThree img.d-block {
+    width: 220px;
+    height: 260px;
+    border: 20px #fff solid;
+    margin: 10px auto;
+}
+
+
 /** Footer **/
 .footer {
     background-color: #688ab0;
     height: 70px;
+    margin-top: 20px;
 }
 .footer p{
     color: #ffffff;
@@ -161,3 +172,49 @@ div.brand {
 }
 
 /** Meida Queries **/
+
+@media only screen and (max-width: 320px){
+    div.message {
+        max-width: 80%;
+    }
+
+    li.nav-item {
+        margin: 0 auto;
+        font-size: 12px;
+    }
+
+    section.container.lights {
+        display: none;
+    }
+
+    div.brand {
+        margin-top: 20px;
+    }
+
+    div.frameItem.frameItemOne,
+    div.frameItem.frameItemTwo,
+    div.frameItem.frameItemThree {
+        margin: 10px auto;
+    }
+
+    div.footer p {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    section.container.lights {
+        display: none;
+    }
+
+    div.col.frames {
+        margin: auto;
+        padding: auto;
+    }
+
+    div.footer p {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+}
