@@ -1,0 +1,163 @@
+html, body {
+    text-decoration:none;
+    font-family: helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #f7f8fc;
+}
+
+nav.navbar.navbar-expand {
+    background-color: #688ab0;
+}
+
+
+/** Header **/
+div a.nav-link {
+    text-transform:uppercase;
+    font-weight:bold;
+    padding: 20px 20px;
+}
+
+a.nav-link:hover {
+    color: #2c405b;
+}
+
+a.nav-link {
+    color: #f7f8fc;
+}
+
+li.nav-item {
+    width: 200px;
+    padding: 0 auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+li.nav-item img.d-block {
+    margin: 0 auto;
+}
+
+/** Slider **/
+div.carousel-inner {
+    max-height: 500px;
+    width: 100%;
+}
+
+li.nav-item {
+    padding-top: 5px;
+}
+/** Message **/
+div.message {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 50px 50px;
+    width: 500px;
+    height: 300px;
+    position:relative;
+    margin: auto;
+    margin-top: -50px;
+    border-top: 10px solid #688ab0;
+    z-index: 1;
+}
+
+div.message h3 {
+    text-transform:uppercase;
+}
+
+/** Lights **/
+div.col {
+    float:inherit;
+    margin-top: -250px;
+    padding: auto;
+}
+
+div.col img {
+    margin: 0 auto;
+    width: 100px;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/** Frames **/
+
+div.col.frames {
+    margin: 10px 0;
+}
+div.frameItem {
+    background-color: #FFFFFF;
+    border: 5px #2c405b solid;
+    box-shadow: 0px 10px 5px grey;
+}
+
+    div.frameItem.frameItemOne {
+        padding: 20px 0;
+        margin-top: 35%;
+    }
+
+    div.frameItem.frameItemOne img {
+        width: 130px;
+    }
+    div.frameItem.frameItemTwo {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px 0;
+    }
+    div.frameItem.frameItemTwo img {
+        width: 140px;
+    }
+
+    div.frameItem.frameItemThree {
+        width: 200px;
+        height: 270px;
+        margin: 0px 23px;
+        margin-bottom: 20px;
+        padding: 28px 20px;
+    }
+    div.frameItem.frameItemThree img {
+        width: 145px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+/** Brand **/
+div.brand {
+    margin-top: 50px;
+    text-align: center;
+    text-transform:uppercase;
+    line-height: 30px;
+    position:relative;
+    clear: both;
+
+}
+    div.brand h3 {
+        font-family: 'Saira', helvetica, sans-serif;
+        font-size: 36px;
+        margin: 0;
+    }
+    div.brand p {
+        font-family: 'Saira', helvetica, sans-serif;
+        font-weight:lighter;
+        font-size: 12px;
+        word-spacing: 5px;
+        letter-spacing: 10px;
+        margin: 0;
+    }
+/** Footer **/
+.footer {
+    background-color: #688ab0;
+    height: 70px;
+}
+.footer p{
+    color: #ffffff;
+    padding-top: 30px;
+    margin: 0;
+    font-weight: lighter;
+    font-size: 12px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+/** Meida Queries **/
