@@ -1,0 +1,227 @@
+/** THIS in object oriented programming**/
+
+// const brad = {
+//     name: 'Brad',
+//     age: 30
+// }
+//
+// console.log(brad);
+// console.log(brad.age);
+
+// Person constructor
+
+function Person(name, dob) {
+    this.name = name;
+    // this.age = age;
+    this.birthday = new Date(dob);
+    this.calculateAge = function() {
+        const diff = Date.now() - this.birthday.getTime();
+        const ageDate = new Date(diff);
+
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+}
+
+    // console.log(this); --> This will get the window object
+    // this.alert(1); --> this pertain the window object too
+
+    // const brad = new Person('brad', 36);
+    // const john = new Person('John', 30);
+    // console.log(john.age);
+
+const brad = new Person('Brad', '9-10-1989');
+console.log(brad.calculateAge());
+
+/** Built in programming **/
+// Stay away from the new objects it's slow
+    //** Built in object oriented programming */
+
+    const name1 = 'Jeff';
+    const name2 = new String('Jeff');
+
+    name2.foo = 'bar';
+    console.log(name2);
+
+    console.log(typeof name2);
+
+    if(name2 === 'Jeff') {
+        console.log('YES');
+    } else {
+        console.log('NO');
+    }
+
+    // Number
+    const num1 = 5;
+    const num2 = new Number(5);
+
+    console.log(typeof num1);
+    console.log(typeof num2);
+
+    // Boolean
+    const bool1 = true;
+    const bool2 = new Boolean(true);
+
+    console.log(typeof bool1);
+    console.log(typeof bool2);
+
+    //function
+    const getSum1 = function(x, y) {
+        return x + y;
+    }
+
+    const getSum2 = new Function('x', 'y', 'return 1 + 1');
+    console.log(getSum1(1,1));
+    console.log(getSum2(1,1));
+
+    // Object
+    const john1 = {name: "john"};
+    const john2 = new Object({name: "John"});
+    console.log(john2);
+
+    // Arrays
+    const arr1 = [1,2,3,4];
+    const arr2 = new Array(1,2,3,4);
+
+    console.log(arr1);
+    console.log(arr2);
+
+    // Regular Expressions
+    const re1 = /\w+/;
+    const re2 = new RegExp('/\w+'); //--> when using the RegExp you need to have an escape characters
+
+    console.log(re1);
+    console.log(re2);
+
+
+//** Protype **/
+    // Object.prototype
+    // Person.prototype
+
+    function Person(firstName, lastName, dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthday = new Date(dob);
+    }
+
+    // get full name
+    Person.prototype.getFullName = function() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+
+    // get married
+    Person.prototype.getMarried = function(newLastName) {
+        this.lastName = newLastName;
+    }
+
+    //calculate age
+    Person.prototype.calculateAge = function() {
+        const diff = Date.now() - this.birthday.getTime();
+        const ageDate = new Date(diff);
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+
+    const dennis = new Person('Dennis', 'Mercado', '12-03-1990');
+    const jackie = new Person('Jackie', 'Mercado', 'March-03-1989');
+
+    console.log(dennis.getFullName());
+    console.log(jackie.calculateAge());
+    jackie.getMarried('smith');
+    console.log(jackie.getFullName());
+    console.log(jackie.hasOwnProperty('firstName'));
+
+
+
+/** ES 5 - Creating objects **/
+    const personPrototypes = {
+        greeting: function(){
+            return `Hello there! ${this.lastName} ${this.firstName}`;
+        },
+
+        getsMarried: function(newLastName) {
+            this.lastName = newLastName;
+        }
+    }
+
+    const name = Object.create(personPrototypes);
+    name.lastName = 'Mercado';
+    name.firstName = 'Dennis';
+    name.age = 30;
+
+    name.getsMarried('Smith');
+
+    console.log(name.greeting());
+
+    const brad = Object.create(personPrototypes, {
+        firstName: {value: 'Jackie'},
+        lastName: {value: 'Mercado'},
+        age: {value: 28}
+    })
+
+    console.log(brad.greeting());
+
+/** ES 6 - Creating Object Syntax
+    class Person {
+        constructor(firstName, lastName, dob) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.birthday = new Date(dob);
+
+        }
+
+        greeting() {
+            return `Hello there! ${this.firstName} ${this.lastName}`;
+        }
+
+        calculateAge() {
+            const diff = Date.now() - this.birthday.getTime();
+            const ageDate = new Date(diff);
+            return Math.abs(ageDate.getUTCFullYear() - 1970);
+        }
+
+        getsMarried(newLastName) {
+            this.lastName = newLastName;
+        }
+
+        /** Stand alone method or function within the Object **/
+        static addNumbers(x, y) {
+            return x + y;
+        }
+    }
+
+    const mary = new Person('Mary', 'Williams', '11-13-1980');
+    mary.getsMarried('Smith');
+    console.log(mary.greeting());
+    console.log(mary.calculateAge());
+
+    console.log(Person.addNumbers(1,2));
+
+
+    /** ES 6 Inheritance **/
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        greeting() {
+            return `Hello there! ${this.firstName} ${this.lastName}`;
+        }
+    }
+
+    class Customer extends Person {
+        constructor(firstName, lastName, phone, membership) {
+            super(firstName, lastName);
+            this.phone = phone;
+            this.membership = membership;
+        }
+
+        static getMembershipCost() {
+            return 500;
+        }
+    }
+
+
+    const john = new Customer('John', 'Doe', '555-555-5555', 'Standard');
+    console.log(john);
+    console.log(john.greeting());
+    console.log(Customer.getMembershipCost());

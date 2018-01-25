@@ -1,0 +1,27 @@
+Object Oriented Programming on JavaScript
+
+/** Object literal **/
+    const brad = {
+        name: 'Brad',
+        age: 30
+    }
+
+    console.log(brad);
+    console.log(brad.age)
+----------
+// Creating a constructor function
+function Person(name, birthday) {
+    this.name = name;
+    this.birthday = new Date(dob)
+
+    }
+}
+
+console.log(this); --> this is a window object
+this.alert(1); --> this pertains the window object
+
+const brad = new Person('Brad');
+const john = new Person('John');
+
+
+-----------
