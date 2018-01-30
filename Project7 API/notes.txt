@@ -1,0 +1,27 @@
+/** Asynchronous programming **/
+posts = loadPostsSync();
+    // ... wait til posts are fetched
+    // ... do something with posts
+doTheNextThing(); // has to wait until posts load
+
+/** Asynchronous code **/
+loadPostsSync(function () {
+    //.. wait til posts are fetched
+    //.. do something with posts
+});
+
+doTheNextThing();
+
+
+Handling Async Code:
+    1. call backs
+    2. promises
+    3. Async/await
+
+What is Ajax
+    - Asynchronous Javascript & XML
+    - Set of web technologies
+    - Send & Receive data Asynchronously
+    - Does not interfere with the current page
+    - JSON has replaced XML for the most part
+ 
