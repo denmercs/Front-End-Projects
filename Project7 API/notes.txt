@@ -24,4 +24,31 @@ What is Ajax
     - Send & Receive data Asynchronously
     - Does not interfere with the current page
     - JSON has replaced XML for the most part
- 
+
+
+What is an API?
+ - Application programming interfere
+ - contract provided by one piece of software to another
+ - structured request and response
+
+REST APIS
+ - Representational State Transfer
+ - Architecture style for designing networked applications
+ - Relies on a stateless, client-server protocol
+ - Treats server objects as resources that can be created or destroyed
+ - can be used by virtually any programming language
+ - All APIS have their own rules and structure
+ - takes multiple type of http request
+
+ HTTP Request
+    - Get: retrieve data from a specified resource
+    - Post: submit data to be processed to a specified resources
+    - Put: update a specified resource
+    - Delete: Delete a specified resource
+
+    - Head: Same as get but does not return a body
+    - Options: Returns the supported HTTP methods
+    - Patch: Update partial resources
+
+
+// Callback function
